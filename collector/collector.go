@@ -3,10 +3,11 @@ package collector
 import (
 	"errors"
 	"fmt"
+	"log/slog"
+	"strconv"
 	"strings"
 
 	"github.com/alecthomas/kingpin/v2"
-	"github.com/go-kit/log"
 	"github.com/pdf/zfs_exporter/v2/zfs"
 	"github.com/prometheus/client_golang/prometheus"
 )
@@ -46,7 +47,7 @@ var (
 	errUnsupportedProperty = errors.New(`unsupported property`)
 )
 
-type factoryFunc func(l log.Logger, c zfs.Client, properties []string) (Collector, error)
+type factoryFunc func(l *slog.Logger, c zfs.Client, properties []string) (Collector, error)
 
 type transformFunc func(string) (float64, error)
 
@@ -122,7 +123,7 @@ func registerCollector(collector string, isDefaultEnabled bool, defaultProps str
 
 	enabledFlagName := fmt.Sprintf("collector.%s", collector)
 	enabledFlagHelp := fmt.Sprintf("Enable the %s collector (default: %s)", collector, helpDefaultState)
-	enabledDefaultValue := fmt.Sprintf("%t", isDefaultEnabled)
+	enabledDefaultValue := strconv.FormatBool(isDefaultEnabled)
 
 	propsFlagName := fmt.Sprintf("properties.%s", collector)
 	propsFlagHelp := fmt.Sprintf("Properties to include for the %s collector, comma-separated.", collector)

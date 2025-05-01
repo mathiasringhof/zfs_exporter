@@ -1,3 +1,43 @@
+## [2.3.8](https://github.com/pdf/zfs_exporter/compare/v2.3.7...v2.3.8) (2025-04-20)
+
+
+### Bug Fixes
+
+* **build:** Bump Go version and golangci-lint ([4d46ab3](https://github.com/pdf/zfs_exporter/commit/4d46ab3))
+
+
+
+
+## [2.3.7](https://github.com/pdf/zfs_exporter/compare/v2.3.6...v2.3.7) (2025-04-20)
+
+
+### Bug Fixes
+
+* **deps:** Bump dependencies ([6af54d2](https://github.com/pdf/zfs_exporter/commit/6af54d2))
+
+
+
+
+## [2.3.6](https://github.com/pdf/zfs_exporter/compare/v2.3.5...v2.3.6) (2025-01-18)
+
+
+### Bug Fixes
+
+* **build:** Bump Go version in actions ([00498df](https://github.com/pdf/zfs_exporter/commit/00498df))
+
+
+
+
+## [2.3.5](https://github.com/pdf/zfs_exporter/compare/v2.3.4...v2.3.5) (2025-01-18)
+
+
+### Bug Fixes
+
+* **core:** Bump dependencies, migrate to promslog ([ccc2b21](https://github.com/pdf/zfs_exporter/commit/ccc2b21))
+
+
+
+
 ## [2.3.4](https://github.com/pdf/zfs_exporter/compare/v2.3.3...v2.3.4) (2024-04-13)
 
 
