@@ -10,11 +10,12 @@ on:
 
 permissions:
   contents: read
-  packages: write
+  packages: write          # <-- lets GITHUB_TOKEN push to GHCR
 
 env:
+  # Do NOT reference another env-var here – that is what caused the error
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ env.REGISTRY }}/${{ github.repository_owner }}/zfs_exporter
+  IMAGE_NAME: ghcr.io/${{ github.repository_owner }}/zfs_exporter
 
 jobs:
   build-and-push:
